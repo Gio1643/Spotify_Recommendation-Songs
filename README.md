@@ -89,6 +89,7 @@ Tabel 2. Hasil Pengujian Melalui Pendekatan CBF
 
 **B. Collaborative Filtering (CF)**
 Collaborative Filtering adalah metode sistem rekomendasi yang memberikan saran berdasarkan pola perilaku dan preferensi kolektif dari sekelompok besar pengguna. Ide dasarnya adalah jika pengguna A memiliki selera yang mirip dengan pengguna B, maka item yang disukai pengguna B (dan belum diketahui pengguna A) kemungkinan besar juga akan disukai oleh pengguna A. Pendekatan ini tidak memerlukan pemahaman tentang konten item itu sendiri, melainkan fokus pada riwayat interaksi pengguna-item (misalnya, rating, riwayat dengar, pembelian).
+
 ![download](https://github.com/user-attachments/assets/ff66965b-8a7a-4d82-ac5f-a29b98c0593e)
 
 Kelebihan:
