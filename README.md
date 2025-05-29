@@ -44,14 +44,27 @@ Tabel 1. Spotify dataset: A Comprehensive Collection of Spotify Tracks Across Va
 
 ## Data Preparation
 Persiapan data merupakan tahapan penting dalam mengubah data mentah menjadi format yang siap untuk dianalisis atau digunakan dalam pemrosesan selanjutnya. Beberapa teknik yang diterapkan dalam proses ini antara lain:
-1. **Penanganan Nilai Hilang (Handling Missing Value)**
-- Nilai yang hilang atau *missing value* adalah salah satu permasalahan umum dalam proyek analisis data, terutama di dunia industri. Nilai yang hilang ini biasanya ditandai dengan *NaN* saat menggunakan pustaka seperti pandas. Penyebabnya bisa bermacam-macam, mulai dari kesalahan manusia, kendala privasi, hingga proses penggabungan data (*merging/join*).
-- Langkah ini dilakukan agar data yang digunakan lebih akurat dan dapat diandalkan. Jika dibiarkan, nilai hilang dapat menimbulkan bias atau kesalahan pada hasil analisis. Oleh karena itu, proses identifikasi dan penanganan nilai yang hilang menjadi krusial untuk meningkatkan kualitas analisis dan model yang dibangun.
-2. **Penanganan Data Duplikat (Handling Duplicated Data)**
-- Data duplikat merupakan masalah lain yang sering ditemui, yaitu ketika satu baris data memiliki isi yang identik di seluruh kolom.
+
+### 1. **Penanganan Nilai Hilang (Handling Missing Value)**
+Nilai yang hilang atau *missing value* adalah salah satu permasalahan umum dalam proyek analisis data, terutama di dunia industri. Nilai yang hilang ini biasanya ditandai dengan *NaN* saat menggunakan pustaka seperti pandas. Penyebabnya bisa bermacam-macam, mulai dari kesalahan manusia, kendala privasi, hingga proses penggabungan data (*merging/join*). Langkah ini dilakukan agar data yang digunakan lebih akurat dan dapat diandalkan. Jika dibiarkan, nilai hilang dapat menimbulkan bias atau kesalahan pada hasil analisis. Oleh karena itu, proses identifikasi dan penanganan nilai yang hilang menjadi krusial untuk meningkatkan kualitas analisis dan model yang dibangun.
+
+### 2. **Penanganan Data Duplikat (Handling Duplicated Data)**
+Data duplikat merupakan masalah lain yang sering ditemui, yaitu ketika satu baris data memiliki isi yang identik di seluruh kolom.
 Langkah ini bertujuan menjaga keutuhan data dan mencegah distorsi dalam proses analisis. Data yang terduplikasi bisa menurunkan akurasi hasil analisis. Untuk mengatasi masalah ini, salah satu metode yang umum digunakan adalah menghapus baris-baris yang teridentifikasi sebagai duplikat (*dropping duplicates*).
-3. **Rekayasa Fitur (Feature Engineering)**
-- Rekayasa fitur adalah proses mengembangkan dan memilih atribut yang relevan agar dapat digunakan dalam analisis data atau dalam membangun model machine learning. Dalam proyek ini, rekayasa fitur dilakukan pada atribut genre. Beberapa entri memiliki lebih dari satu genre dalam satu data, sehingga perlu ditangani dengan memilih genre yang muncul pertama. Langkah ini bertujuan menyederhanakan proses pembangunan model serta meningkatkan performanya.
+
+### 3. **Content Based Filltering Preparation**
+Tahap persiapan data untuk model Content-Based Filtering (CBF) difokuskan pada pengolahan fitur. Langkah fundamental dalam proses ini adalah transformasi fitur tekstual, seperti genre lagu menjadi representasi numerik yang dapat dianalisis oleh algoritma untuk menentukan kemiripan.
+#### Inisialisasi Vectorizer
+Pertama, sebuah instance dari TfidfVectorizer dibuat. Vectorizer ini nantinya akan mempelajari kosakata dari data genre dan menghitung bobot TF-IDF untuk setiap term (kata).
+#### Pembelajaran (Fit) dan Transformasi
+TfidfVectorizer kemudian "dilatih" (fit) pada seluruh data genre yang ada di kolom df['genre']. Selama proses fit, vectorizer mengidentifikasi semua term unik yang ada dan menghitung skor IDF (Inverse Document Frequency) untuk masing-masing term. Setelah itu, proses transform mengubah setiap teks genre menjadi sebuah vektor numerik, di mana setiap elemen vektor adalah skor TF-IDF dari term yang sesuai. Kedua langkah ini digabungkan dengan metode fit_transform(). Hasil dari langkah ini adalah tfidf_matrix, sebuah matriks sparse yang merepresentasikan semua lagu sebagai vektor TF-IDF dari genre mereka.
+#### Verifikasi Dimensi Matriks
+Untuk memahami struktur matriks yang dihasilkan, dimensinya diperiksa.
+#### Konversi ke Matriks Padat (Dense Matrix) dan Pembuatan DataFrame (untuk Inspeksi)
+Matriks ini diubah menjadi format dense (padat) di mana semua nilai (termasuk nol) disimpan secara eksplisit. Hasilnya kemudian dapat ditampilkan sebagai DataFrame pandas untuk kemudahan pembacaan, dengan nama lagu sebagai indeks dan term unik dari genre sebagai nama kolom.
+
+### 3. **Rekayasa Fitur (Feature Engineering)**
+- Rekayasa fitur adalah proses mengembangkan dan memilih atribut yang relevan agar dapat digunakan dalam analisis data atau dalam membangun model machine learning. Dalam proyek ini, rekayasa fitur dilakukan pada atribut genre. Langkah ini bertujuan menyederhanakan proses pembangunan model serta meningkatkan performanya.
 
 ## Modeling
 Pada proyek ini, algoritma machine learning yang diimplementasikan untuk sistem rekomendasi mencakup Content-Based Filtering dan Collaborative Filtering.
