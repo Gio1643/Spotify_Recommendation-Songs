@@ -1,5 +1,5 @@
 # Laporan Proyek Machine Learning - Putu Gio Satria Adinata
-![images (1)](https://github.com/user-attachments/assets/cca7cc9b-be3d-4625-928a-77e23c748952)
+![download](https://github.com/user-attachments/assets/16f091af-2693-447c-9ebb-158b2b7ca551)
 
 ## Project Overview
 Layanan streaming musik seperti Spotify kini menjadi bagian tak terpisahkan dari kehidupan jutaan orang di seluruh dunia. Platform ini memberikan akses luas ke jutaan lagu dari berbagai genre dan artis, menghadirkan pengalaman mendengarkan musik yang bisa disesuaikan dengan preferensi tiap pengguna. Namun, dengan begitu banyaknya konten yang tersedia, tantangan terbesar Spotify adalah bagaimana menampilkan lagu-lagu yang benar-benar relevan dan menarik bagi setiap pengguna. Salah satu solusi yang digunakan adalah teknik segmentasi pengguna. Teknik ini memungkinkan Spotify mengenali selera musik individu, sehingga dapat menyajikan rekomendasi yang lebih tepat sasaran (Dharmasenaa & Pramarthaa, 2024).
