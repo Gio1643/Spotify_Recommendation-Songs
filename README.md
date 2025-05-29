@@ -72,3 +72,15 @@ Implementasi pada Proyek Ini, diantaranya:
 1. Vektorisasi Fitur dengan TF-IDF yang di mana data fitur item (misalnya, genre musik) yang telah dibersihkan dikonversi menjadi representasi vektor numerik menggunakan TfidfVectorizer dari pustaka scikit-learn. Langkah ini menghasilkan matriks TF-IDF yang merepresentasikan pentingnya setiap term (kata dalam genre) untuk setiap lagu.
 2. Perhitungan Kemiripan Konten (Cosine Similarity) pada derajat kesamaan antar lagu dihitung berdasarkan vektor TF-IDF mereka menggunakan fungsi cosine_similarity. Hasilnya adalah matriks kemiripan yang menunjukkan seberapa mirip konten setiap pasang lagu.
 3. Pembuatan fungsi rekomendasi yang dikembangkan untuk menghasilkan rekomendasi. Fungsi ini, memanfaatkan argpartition, mengambil lagu input, mencari skor kemiripan tertinggi dari matriks kemiripan (cosine_sim_df), dan mengembalikan k lagu teratas yang paling mirip, setelah menghilangkan lagu input dari daftar hasil.
+
+**Hasil**
+Tahapan pengembangan model machine learning rekomendasi musik atau lagu telah berhasil dibuat. Tahap selanjutnya yaitu melihat bagaimana hasil dari rekomendasi musik atau lagu yang dibuat. Dalam kasus ini, akan dicari lagu yang mirip dengan lagu dari John Denver dengan judul Rocky Mountain High yang bergenre Rock.
+
+Tabel 2. Hasil Pengujian Melalui Pendekatan CBF
+|    | song              | genre |
+|----|-------------------|-------|
+| 0  | hikikomori rock | j-rock |
+| 1  | Jibun ROCK | j-rock |
+| 2  | Fallin' In Love | j-rock |
+| 3  | Ceria | j-rock |
+| 4  | Prove - Japanese Version | j-rock |
