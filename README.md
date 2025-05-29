@@ -55,7 +55,8 @@ Langkah ini bertujuan menjaga keutuhan data dan mencegah distorsi dalam proses a
 
 ## Modeling
 Pada proyek ini, algoritma machine learning yang diimplementasikan untuk sistem rekomendasi mencakup Content-Based Filtering dan Collaborative Filtering.
-A. Content-Based Filtering adalah metode sistem rekomendasi yang menganalisis dan merekomendasikan item berdasarkan karakteristik atau konten intrinsik dari item tersebut. Pendekatan ini memanfaatkan atribut atau fitur-fitur spesifik dari setiap item untuk mengidentifikasi kesamaan antar item dan mencocokkannya dengan preferensi pengguna yang diketahui berdasarkan interaksi masa lalu dengan item serupa.
+**A. Content-Based Filtering**
+Content-Based Filtering adalah metode sistem rekomendasi yang menganalisis dan merekomendasikan item berdasarkan karakteristik atau konten intrinsik dari item tersebut. Pendekatan ini memanfaatkan atribut atau fitur-fitur spesifik dari setiap item untuk mengidentifikasi kesamaan antar item dan mencocokkannya dengan preferensi pengguna yang diketahui berdasarkan interaksi masa lalu dengan item serupa.
 
 ![download (1)](https://github.com/user-attachments/assets/9a65df00-d3cd-4fba-b73d-c21c54a0ae0a)
 
@@ -84,3 +85,31 @@ Tabel 2. Hasil Pengujian Melalui Pendekatan CBF
 | 2  | Fallin' In Love | j-rock |
 | 3  | Ceria | j-rock |
 | 4  | Prove - Japanese Version | j-rock |
+
+**B. Collaborative Filtering (CF)**
+Collaborative Filtering adalah metode sistem rekomendasi yang memberikan saran berdasarkan pola perilaku dan preferensi kolektif dari sekelompok besar pengguna. Ide dasarnya adalah jika pengguna A memiliki selera yang mirip dengan pengguna B, maka item yang disukai pengguna B (dan belum diketahui pengguna A) kemungkinan besar juga akan disukai oleh pengguna A. Pendekatan ini tidak memerlukan pemahaman tentang konten item itu sendiri, melainkan fokus pada riwayat interaksi pengguna-item (misalnya, rating, riwayat dengar, pembelian).
+![download](https://github.com/user-attachments/assets/ff66965b-8a7a-4d82-ac5f-a29b98c0593e)
+
+Kelebihan:
+1. Mampu menghasilkan rekomendasi yang mengejutkan (serendipitous) dan menemukan item lintas genre atau kategori yang mungkin tidak teridentifikasi oleh CBF.
+2. Tidak memerlukan analisis fitur item secara manual (domain knowledge tidak selalu esensial untuk item), karena bergantung pada data interaksi.
+3. Dapat menangkap preferensi pengguna yang kompleks dan implisit yang sulit diwakili oleh atribut konten.
+
+Kekurangan:
+1. Mengalami masalah cold start, yaitu kesulitan memberikan rekomendasi untuk pengguna baru (yang belum memiliki riwayat interaksi) atau untuk item baru (yang belum mendapatkan interaksi).
+2. Rentan terhadap data sparsity, di mana matriks interaksi pengguna-item sangat kosong karena pengguna hanya berinteraksi dengan sebagian kecil dari total item yang tersedia.
+3. Bisa memiliki popularity bias, yaitu cenderung merekomendasikan item-item yang sudah populer.
+Skalabilitas bisa menjadi tantangan pada dataset dengan jumlah pengguna dan item yang sangat besar, terutama untuk pendekatan berbasis memori.
+
+**Implementasi pada Proyek Ini (RecommenderNet):**
+Tahapan pemodelan menggunakan Collaborative Filtering (berbasis model) dalam proyek ini adalah sebagai berikut:
+1. Persiapan Data Interaksi
+   - Membuat pemetaan ID numerik untuk pengguna (atau proxy pengguna seperti artis) dan item (lagu).
+   - Menyusun dataset yang berisi pasangan ID pengguna dan ID lagu, beserta target interaksi (misalnya, skor popularitas yang dinormalisasi sebagai representasi implisit preferensi).
+   - Membagi dataset menjadi data pelatihan dan data validasi.
+2. Definisi dan Pelatihan Model
+   - Membangun model machine learning (misalnya, jaringan saraf seperti RecommenderNet yang telah dibahas) yang menggunakan embedding layers untuk mempelajari representasi vektor laten (fitur tersembunyi) bagi setiap pengguna dan item.
+   - Model ini dilatih untuk memprediksi skor interaksi (misalnya, popularitas yang diskalakan) berdasarkan vektor laten pengguna dan item, seringkali menggunakan operasi dot product dan bias.
+   - Model dikompilasi dengan loss function (BinaryCrossentropy) dan optimizer (Adam), kemudian dilatih menggunakan data interaksi.
+3. Pembuatan Fungsi Rekomendasi
+   - Untuk seorang pengguna (artis input), model digunakan untuk memprediksi skor preferensi terhadap semua lagu yang belum pernah berinteraksi dengannya. Lagu-lagu tersebut kemudian diurutkan berdasarkan skor prediksi tertinggi, dan k lagu teratas dikembalikan sebagai rekomendasi.
