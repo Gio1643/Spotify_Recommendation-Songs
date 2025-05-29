@@ -26,7 +26,7 @@ Merujuk pada rumusan masalah dan tujuan yang telah dijabarkan sebelumnya, solusi
 3. Melakukan evaluasi terhadap kedua model menggunakan metrik evaluasi yang telah ditentukan, guna menilai performa masing-masing pendekatan dalam memberikan rekomendasi musik berdasarkan genre dan preferensi pengguna. Evaluasi ini bertujuan untuk menentukan metode rekomendasi yang paling efektif dalam meningkatkan relevansi dan personalisasi bagi pengguna.
 
 ## Data Understanding
-Pada proyek ini dataset yang digunakan adalah Spotify dataset: A Comprehensive Collection of Spotify Tracks Across Various Genres yang diupload oleh Gati Ambaliya. Datasetnya dapat dilihat pada tautan ini https://www.kaggle.com/datasets/ambaliyagati/spotify-dataset-for-playing-around-with-sql
+Pada proyek ini dataset yang digunakan adalah Spotify dataset: A Comprehensive Collection of Spotify Tracks Across Various Genres yang diupload oleh Gati Ambaliya. Dataset ini memiliki 6187 rows dan 8 features. Datasetnya dapat dilihat pada tautan ini https://www.kaggle.com/datasets/ambaliyagati/spotify-dataset-for-playing-around-with-sql
 
 ### Variabel Dataset
 Berikut adalah detail dari *features* dataset yang digunakan dalam pengembangan model *machine learning* proyek ini :
@@ -113,3 +113,10 @@ Tahapan pemodelan menggunakan Collaborative Filtering (berbasis model) dalam pro
    - Model dikompilasi dengan loss function (BinaryCrossentropy) dan optimizer (Adam), kemudian dilatih menggunakan data interaksi.
 3. Pembuatan Fungsi Rekomendasi
    - Untuk seorang pengguna (artis input), model digunakan untuk memprediksi skor preferensi terhadap semua lagu yang belum pernah berinteraksi dengannya. Lagu-lagu tersebut kemudian diurutkan berdasarkan skor prediksi tertinggi, dan k lagu teratas dikembalikan sebagai rekomendasi.
+
+**Hasil**
+![topn-1](https://github.com/user-attachments/assets/ee0eff4d-9ef1-4a63-9f40-6e22a5e06ae0)
+
+![topnew2](https://github.com/user-attachments/assets/a885bcf2-ff3f-4caa-b19f-6c85e74a59fb)
+
+## Evaluation
