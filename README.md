@@ -18,3 +18,10 @@ Merujuk pada rumusan masalah yang telah diidentifikasi, proyek machine learning 
 1. Memahami dan mendemonstrasikan bagaimana algoritma machine learning dapat diterapkan secara efektif untuk menghasilkan rekomendasi musik yang spesifik berdasarkan genre.
 2. Mendalami dan memaparkan keseluruhan tahapan yang terlibat dalam proses pengembangan model machine learning untuk sistem rekomendasi musik berbasis genre, mulai dari persiapan data hingga implementasi model.
 3. Menganalisis dan menyajikan hasil evaluasi kinerja model machine learning yang telah berhasil dikembangkan dalam memberikan rekomendasi musik berdasarkan preferensi genre pengguna.
+
+**Rubrik/Kriteria Tambahan**:
+### Solution Statements
+Merujuk pada rumusan masalah dan tujuan yang telah dijabarkan sebelumnya, solusi yang ditawarkan dalam proyek machine learning ini meliputi:
+1. Mengembangkan model machine learning secara menyeluruh, dimulai dari tahap awal seperti pembersihan dan pengolahan data (data wrangling), analisis eksploratif (Exploratory Data Analysis atau EDA), pembangunan model (modelling), hingga tahap evaluasi.
+2. Proses pembangunan model dilakukan dengan menerapkan dua pendekatan utama, yaitu content-based filtering (CBF) dan collaborative filtering (CF), yang dipilih sesuai dengan karakteristik permasalahan dan dataset yang tersedia.
+3. Melakukan evaluasi terhadap kedua model menggunakan metrik evaluasi yang telah ditentukan, guna menilai performa masing-masing pendekatan dalam memberikan rekomendasi musik berdasarkan genre dan preferensi pengguna. Evaluasi ini bertujuan untuk menentukan metode rekomendasi yang paling efektif dalam meningkatkan relevansi dan personalisasi bagi pengguna.
