@@ -51,4 +51,22 @@ Persiapan data merupakan tahapan penting dalam mengubah data mentah menjadi form
 - Data duplikat merupakan masalah lain yang sering ditemui, yaitu ketika satu baris data memiliki isi yang identik di seluruh kolom.
 Langkah ini bertujuan menjaga keutuhan data dan mencegah distorsi dalam proses analisis. Data yang terduplikasi bisa menurunkan akurasi hasil analisis. Untuk mengatasi masalah ini, salah satu metode yang umum digunakan adalah menghapus baris-baris yang teridentifikasi sebagai duplikat (*dropping duplicates*).
 3. **Rekayasa Fitur (Feature Engineering)**
-= Rekayasa fitur adalah proses mengembangkan dan memilih atribut yang relevan agar dapat digunakan dalam analisis data atau dalam membangun model machine learning. Dalam proyek ini, rekayasa fitur dilakukan pada atribut genre. Beberapa entri memiliki lebih dari satu genre dalam satu data, sehingga perlu ditangani dengan memilih genre yang muncul pertama. Langkah ini bertujuan menyederhanakan proses pembangunan model serta meningkatkan performanya.
+- Rekayasa fitur adalah proses mengembangkan dan memilih atribut yang relevan agar dapat digunakan dalam analisis data atau dalam membangun model machine learning. Dalam proyek ini, rekayasa fitur dilakukan pada atribut genre. Beberapa entri memiliki lebih dari satu genre dalam satu data, sehingga perlu ditangani dengan memilih genre yang muncul pertama. Langkah ini bertujuan menyederhanakan proses pembangunan model serta meningkatkan performanya.
+
+## Modeling
+Pada proyek ini, algoritma machine learning yang diimplementasikan untuk sistem rekomendasi mencakup Content-Based Filtering dan Collaborative Filtering.
+A. Content-Based Filtering adalah metode sistem rekomendasi yang menganalisis dan merekomendasikan item berdasarkan karakteristik atau konten intrinsik dari item tersebut. Pendekatan ini memanfaatkan atribut atau fitur-fitur spesifik dari setiap item untuk mengidentifikasi kesamaan antar item dan mencocokkannya dengan preferensi pengguna yang diketahui berdasarkan interaksi masa lalu dengan item serupa.
+![download (1)](https://github.com/user-attachments/assets/18dcef90-130e-4dcf-9884-f050c3e342de)
+
+Kelebihan pendekatan ini, adalah sebagai berikut.
+1. Mampu menghasilkan rekomendasi yang sangat personal karena secara langsung mempertimbangkan fitur item yang disukai pengguna.
+2. Tidak bergantung pada data interaksi dari pengguna lain, sehingga efektif diimplementasikan meskipun data pengguna secara keseluruhan terbatas atau untuk merekomendasikan item baru yang belum banyak interaksi.
+
+Kekurangan pendekatan ini, adalah sebagai berikut
+1. Cenderung kurang mampu menyarankan item yang sangat berbeda (kurang serendipity) dari apa yang pernah disukai pengguna sebelumnya, karena terbatas pada kemiripan fitur.
+2. Berpotensi mengalami overfitting jika model terlalu terpaku pada atribut atau fitur yang sangat spesifik dan tidak umum.
+
+Implementasi pada Proyek Ini, diantaranya:
+1. Vektorisasi Fitur dengan TF-IDF yang di mana data fitur item (misalnya, genre musik) yang telah dibersihkan dikonversi menjadi representasi vektor numerik menggunakan TfidfVectorizer dari pustaka scikit-learn. Langkah ini menghasilkan matriks TF-IDF yang merepresentasikan pentingnya setiap term (kata dalam genre) untuk setiap lagu.
+2. Perhitungan Kemiripan Konten (Cosine Similarity) pada derajat kesamaan antar lagu dihitung berdasarkan vektor TF-IDF mereka menggunakan fungsi cosine_similarity. Hasilnya adalah matriks kemiripan yang menunjukkan seberapa mirip konten setiap pasang lagu.
+3. Pembuatan fungsi rekomendasi yang dikembangkan untuk menghasilkan rekomendasi. Fungsi ini, memanfaatkan argpartition, mengambil lagu input, mencari skor kemiripan tertinggi dari matriks kemiripan (cosine_sim_df), dan mengembalikan k lagu teratas yang paling mirip, setelah menghilangkan lagu input dari daftar hasil.
