@@ -19,9 +19,24 @@ Merujuk pada rumusan masalah yang telah diidentifikasi, proyek machine learning 
 2. Mendalami dan memaparkan keseluruhan tahapan yang terlibat dalam proses pengembangan model machine learning untuk sistem rekomendasi musik berbasis genre, mulai dari persiapan data hingga implementasi model.
 3. Menganalisis dan menyajikan hasil evaluasi kinerja model machine learning yang telah berhasil dikembangkan dalam memberikan rekomendasi musik berdasarkan preferensi genre pengguna.
 
-**Rubrik/Kriteria Tambahan**:
 ### Solution Statements
 Merujuk pada rumusan masalah dan tujuan yang telah dijabarkan sebelumnya, solusi yang ditawarkan dalam proyek machine learning ini meliputi:
 1. Mengembangkan model machine learning secara menyeluruh, dimulai dari tahap awal seperti pembersihan dan pengolahan data (data wrangling), analisis eksploratif (Exploratory Data Analysis atau EDA), pembangunan model (modelling), hingga tahap evaluasi.
 2. Proses pembangunan model dilakukan dengan menerapkan dua pendekatan utama, yaitu content-based filtering (CBF) dan collaborative filtering (CF), yang dipilih sesuai dengan karakteristik permasalahan dan dataset yang tersedia.
 3. Melakukan evaluasi terhadap kedua model menggunakan metrik evaluasi yang telah ditentukan, guna menilai performa masing-masing pendekatan dalam memberikan rekomendasi musik berdasarkan genre dan preferensi pengguna. Evaluasi ini bertujuan untuk menentukan metode rekomendasi yang paling efektif dalam meningkatkan relevansi dan personalisasi bagi pengguna.
+
+## Data Understanding
+Pada proyek ini dataset yang digunakan adalah Spotify dataset: A Comprehensive Collection of Spotify Tracks Across Various Genres yang diupload oleh Gati Ambaliya. Datasetnya dapat dilihat pada tautan ini https://www.kaggle.com/datasets/ambaliyagati/spotify-dataset-for-playing-around-with-sql
+
+### Variabel Dataset
+Berikut adalah detail dari *features* dataset yang digunakan dalam pengembangan model *machine learning* proyek ini :
+Tabel 1. Spotify dataset: A Comprehensive Collection of Spotify Tracks Across Various Genres
+| Attribute | Description | Data Type |
+id | Unique identifier for the track on Spotify.
+name | Name of the track.
+genre | genre of the song.
+artists | Names of the artists who performed the track, separated by commas if there are multiple artists.
+album | Name of the album the track belongs to.
+popularity | Popularity score of the track (0-100, where higher is more popular).
+duration_ms | Duration of the track in milliseconds.
+explicit | Boolean indicating whether the track contains explicit content.
