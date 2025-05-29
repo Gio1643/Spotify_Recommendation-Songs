@@ -124,3 +124,22 @@ Tahapan pemodelan menggunakan Collaborative Filtering (berbasis model) dalam pro
 ![topnew2](https://github.com/user-attachments/assets/a885bcf2-ff3f-4caa-b19f-6c85e74a59fb)
 
 ## Evaluation
+Proyek machine learning ini dikembangkan dengan menggunakan algoritma Content-Based Filtering dan Collaborative Filtering (berbasis model prediktif). Oleh karena itu, metrik evaluasi yang digunakan akan mencerminkan performa dari kedua jenis pendekatan tersebut.
+1. Evaluasi untuk Content-Based Filtering (CBF)
+Untuk CBF, di mana rekomendasi didasarkan pada kemiripan konten item, salah satu metrik yang relevan adalah Precision. Precision mengukur seberapa banyak item yang direkomendasikan benar-benar relevan bagi pengguna atau item input, berdasarkan suatu ground truth (kebenaran dasar) yang telah ditentukan.
+
+![cbfevaluation](https://github.com/user-attachments/assets/524554ca-c955-4b10-a705-aa7f69cd37ca)
+
+Hasil ini menunjukkan bahwa untuk kasus uji tersebut, semua rekomendasi dari CBF dianggap sangat relevan. Selain Precision, analisis kualitatif terhadap keragaman (diversity) dan kebaruan (novelty) rekomendasi CBF juga bisa memberikan wawasan tambahan.
+
+2. Evaluasi untuk Collaborative Filtering (CF) dengan Model Prediktif (RecommenderNet)
+Untuk pendekatan CF yang menggunakan model prediktif seperti RecommenderNet (yang dilatih untuk memprediksi skor popularity_scaled), metrik evaluasi utama berfokus pada seberapa akurat prediksi skor tersebut. Metrik yang umum digunakan adalah RMSE.
+
+![evaluationcf](https://github.com/user-attachments/assets/14ca56e4-0433-4223-8381-fb448adc7b07)
+
+Kesimpulan:
+1. Model Belajar dengan Baik pada Data Pelatihan, dimana penurunan nilai loss dan RMSE pada set pelatihan menunjukkan bahwa model berhasil mempelajari pola-pola yang ada dalam data pelatihan.
+2. Overfitting Terjadi, dimana perbedaan yang signifikan dan meningkat antara kinerja pada data pelatihan dan data validasi (di mana kinerja pada data pelatihan terus membaik sementara pada data validasi stagnan atau memburuk) adalah gejala klasik dari overfitting. Ini berarti model Anda mulai "menghafal" data pelatihan, termasuk noise di dalamnya, daripada mempelajari pola umum yang bisa digeneralisasi ke data baru. Akibatnya, performa model pada data yang belum pernah dilihat (data validasi) tidak sebaik performanya pada data pelatihan.
+3. Epoch Optimal, dimana titik di mana kurva validasi mulai stagnan atau naik (sekitar epoch 5-15 dalam kasus ini) bisa dianggap sebagai perkiraan jumlah epoch optimal untuk pelatihan sebelum overfitting menjadi terlalu parah. Melatih lebih lama dari titik ini mungkin tidak meningkatkan kemampuan generalisasi model.
+
+## References
