@@ -56,7 +56,9 @@ Langkah ini bertujuan menjaga keutuhan data dan mencegah distorsi dalam proses a
 ## Modeling
 Pada proyek ini, algoritma machine learning yang diimplementasikan untuk sistem rekomendasi mencakup Content-Based Filtering dan Collaborative Filtering.
 A. Content-Based Filtering adalah metode sistem rekomendasi yang menganalisis dan merekomendasikan item berdasarkan karakteristik atau konten intrinsik dari item tersebut. Pendekatan ini memanfaatkan atribut atau fitur-fitur spesifik dari setiap item untuk mengidentifikasi kesamaan antar item dan mencocokkannya dengan preferensi pengguna yang diketahui berdasarkan interaksi masa lalu dengan item serupa.
-![download (1)](https://github.com/user-attachments/assets/18dcef90-130e-4dcf-9884-f050c3e342de)
+
+![download (1)](https://github.com/user-attachments/assets/9a65df00-d3cd-4fba-b73d-c21c54a0ae0a)
+
 
 Kelebihan pendekatan ini, adalah sebagai berikut.
 1. Mampu menghasilkan rekomendasi yang sangat personal karena secara langsung mempertimbangkan fitur item yang disukai pengguna.
