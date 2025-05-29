@@ -165,8 +165,8 @@ Kesimpulan:
 
 ## References
 
-Dharmasena, K. B., & Pramartha, C. (2018). Integration K-Means Clustering Method and Elbow Method For Identification of The Best Customer Profile Cluster. IOP Conference Series: Materials Science and Engineering, 336, 012017. https://doi.org/10.1088/1757-899X/336/1/012017
-Gatzioura, A., Vinagre, J., Jorge, A. M., & Sanchez-Marre, M. (2021). A Hybrid Recommender System for Improving Automatic Playlist Continuation. IEEE Transactions on Knowledge and Data Engineering, 33(5). https://doi.org/10.1109/TKDE.2019.2952099
-Indraswara, R., Brata, K. C., & Herlambang, A. D. (2020). Analisis Pembelian Fitur Premium Pada Pengguna Aplikasi Spotify Menggunakan Variabel Hedonic Motivation System. Program Studi Sistem Informasi, Fakultas Ilmu Komputer, Universitas Brawijaya, 4(1).
-Mastrika Giri, G. A. V., & Harjoko, A. (2016). Music recommendation system based on context using case-based reasoning and self organizing map. Indonesian Journal of Electrical Engineering and Computer Science, 4(2). https://doi.org/10.11591/ijeecs.v4.i2.pp459-464
-Putra, R. M., & Irwansyah, I. (2019). Musik Rilisan Fisik Di Era Digital: Musik Indie Dan Konsumsi Rilisan Musik Fisik. Jurnal Komunikasi, 11(2). https://doi.org/10.24912/jk.v11i2.4062
+- Dharmasena, K. B., & Pramartha, C. (2018). Integration K-Means Clustering Method and Elbow Method For Identification of The Best Customer Profile Cluster. IOP Conference Series: Materials Science and Engineering, 336, 012017. https://doi.org/10.1088/1757-899X/336/1/012017
+- Gatzioura, A., Vinagre, J., Jorge, A. M., & Sanchez-Marre, M. (2021). A Hybrid Recommender System for Improving Automatic Playlist Continuation. IEEE Transactions on Knowledge and Data Engineering, 33(5). https://doi.org/10.1109/TKDE.2019.2952099
+- Indraswara, R., Brata, K. C., & Herlambang, A. D. (2020). Analisis Pembelian Fitur Premium Pada Pengguna Aplikasi Spotify Menggunakan Variabel Hedonic Motivation System. Program Studi Sistem Informasi, Fakultas Ilmu Komputer, Universitas Brawijaya, 4(1).
+- Mastrika Giri, G. A. V., & Harjoko, A. (2016). Music recommendation system based on context using case-based reasoning and self organizing map. Indonesian Journal of Electrical Engineering and Computer Science, 4(2). https://doi.org/10.11591/ijeecs.v4.i2.pp459-464
+- Putra, R. M., & Irwansyah, I. (2019). Musik Rilisan Fisik Di Era Digital: Musik Indie Dan Konsumsi Rilisan Musik Fisik. Jurnal Komunikasi, 11(2). https://doi.org/10.24912/jk.v11i2.4062
