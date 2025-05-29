@@ -32,6 +32,7 @@ Pada proyek ini dataset yang digunakan adalah Spotify dataset: A Comprehensive C
 Berikut adalah detail dari *features* dataset yang digunakan dalam pengembangan model *machine learning* proyek ini :
 Tabel 1. Spotify dataset: A Comprehensive Collection of Spotify Tracks Across Various Genres
 | Attribute | Description | Data Type |
+|---|---|
 | id | Unique identifier for the track on Spotify. |
 | name | Name of the track. |
 | genre | genre of the song. |
