@@ -41,3 +41,14 @@ Tabel 1. Spotify dataset: A Comprehensive Collection of Spotify Tracks Across Va
 | popularity | Popularity score of the track (0-100, where higher is more popular). |
 | duration_ms | Duration of the track in milliseconds. |
 | explicit | Boolean indicating whether the track contains explicit content. |
+
+## Data Preparation
+Persiapan data merupakan tahapan penting dalam mengubah data mentah menjadi format yang siap untuk dianalisis atau digunakan dalam pemrosesan selanjutnya. Beberapa teknik yang diterapkan dalam proses ini antara lain:
+1. **Penanganan Nilai Hilang (Handling Missing Value)**
+- Nilai yang hilang atau *missing value* adalah salah satu permasalahan umum dalam proyek analisis data, terutama di dunia industri. Nilai yang hilang ini biasanya ditandai dengan *NaN* saat menggunakan pustaka seperti pandas. Penyebabnya bisa bermacam-macam, mulai dari kesalahan manusia, kendala privasi, hingga proses penggabungan data (*merging/join*).
+- Langkah ini dilakukan agar data yang digunakan lebih akurat dan dapat diandalkan. Jika dibiarkan, nilai hilang dapat menimbulkan bias atau kesalahan pada hasil analisis. Oleh karena itu, proses identifikasi dan penanganan nilai yang hilang menjadi krusial untuk meningkatkan kualitas analisis dan model yang dibangun.
+2. **Penanganan Data Duplikat (Handling Duplicated Data)**
+- Data duplikat merupakan masalah lain yang sering ditemui, yaitu ketika satu baris data memiliki isi yang identik di seluruh kolom.
+Langkah ini bertujuan menjaga keutuhan data dan mencegah distorsi dalam proses analisis. Data yang terduplikasi bisa menurunkan akurasi hasil analisis. Untuk mengatasi masalah ini, salah satu metode yang umum digunakan adalah menghapus baris-baris yang teridentifikasi sebagai duplikat (*dropping duplicates*).
+3. **Rekayasa Fitur (Feature Engineering)**
+= Rekayasa fitur adalah proses mengembangkan dan memilih atribut yang relevan agar dapat digunakan dalam analisis data atau dalam membangun model machine learning. Dalam proyek ini, rekayasa fitur dilakukan pada atribut genre. Beberapa entri memiliki lebih dari satu genre dalam satu data, sehingga perlu ditangani dengan memilih genre yang muncul pertama. Langkah ini bertujuan menyederhanakan proses pembangunan model serta meningkatkan performanya.
