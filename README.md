@@ -71,7 +71,7 @@ Pada tahap awal persiapan data, dilakukan seleksi fitur dengan menghapus beberap
 
 ### 4. **Penanganan Data Duplikat Secara Spesifik**
 
-![duplikat](https://github.com/user-attachments/assets/84a7d03c-a302-44cd-959c-fbd19c1a64c7)
+![duplicate](https://github.com/user-attachments/assets/0ab7498f-dd9c-4fa8-b08f-8647d4cc13a3)
 
 
 Setelah menghapus fitur yang tidak digunakan, peneliti melihat beberapa lagu yang sama dengan genre dan artists yang sama, sehingga perlu dilakukan penanganan data duplikat secara spesifik. Pada tahap ini, `df[['name', 'artists', 'genre']]` relevan untuk analisis selanjutnya, yaitu name (nama lagu), artists (artis), dan genre (genre lagu). Metode `drop_duplicates()` digunakan untuk menghapus baris-baris yang duplikat. Parameter `subset='name'` menginstruksikan fungsi untuk mempertimbangkan sebuah baris sebagai duplikat jika nilai pada kolom name (nama lagu) sama dengan nilai pada baris lain. Artinya, jika ada beberapa lagu dengan nama yang sama, hanya satu yang akan dipertahankan. Parameter `keep='first'` menentukan bahwa jika ditemukan duplikat (berdasarkan nama lagu), maka baris pertama yang muncul akan dipertahankan, dan sisanya akan dihapus.
