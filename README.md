@@ -71,9 +71,12 @@ Pada tahap awal persiapan data, dilakukan seleksi fitur dengan menghapus beberap
 
 ### 4. **Penanganan Data Duplikat Secara Spesifik**
 
-Setelah menghapus fitur yang tidak digunakan, peneliti melihat beberapa lagu yang sama dengan genre dan artists yang sama, sehingga perlu dilakukan penanganan data duplikat secara spesifik. Pada tahap ini, df[['name', 'artists', 'genre']] relevan untuk analisis selanjutnya, yaitu name (nama lagu), artists (artis), dan genre (genre lagu). Metode drop_duplicates() digunakan untuk menghapus baris-baris yang duplikat. Parameter subset='name' menginstruksikan fungsi untuk mempertimbangkan sebuah baris sebagai duplikat jika nilai pada kolom name (nama lagu) sama dengan nilai pada baris lain. Artinya, jika ada beberapa lagu dengan nama yang sama, hanya satu yang akan dipertahankan. Parameter keep='first' menentukan bahwa jika ditemukan duplikat (berdasarkan nama lagu), maka baris pertama yang muncul akan dipertahankan, dan sisanya akan dihapus.
+![duplikat](https://github.com/user-attachments/assets/84a7d03c-a302-44cd-959c-fbd19c1a64c7)
 
-### 4. **Content Based Filltering Preparation**
+
+Setelah menghapus fitur yang tidak digunakan, peneliti melihat beberapa lagu yang sama dengan genre dan artists yang sama, sehingga perlu dilakukan penanganan data duplikat secara spesifik. Pada tahap ini, `df[['name', 'artists', 'genre']]` relevan untuk analisis selanjutnya, yaitu name (nama lagu), artists (artis), dan genre (genre lagu). Metode `drop_duplicates()` digunakan untuk menghapus baris-baris yang duplikat. Parameter `subset='name'` menginstruksikan fungsi untuk mempertimbangkan sebuah baris sebagai duplikat jika nilai pada kolom name (nama lagu) sama dengan nilai pada baris lain. Artinya, jika ada beberapa lagu dengan nama yang sama, hanya satu yang akan dipertahankan. Parameter `keep='first'` menentukan bahwa jika ditemukan duplikat (berdasarkan nama lagu), maka baris pertama yang muncul akan dipertahankan, dan sisanya akan dihapus.
+
+### 5. **Content Based Filltering Preparation**
 
 Tahap persiapan data untuk model Content-Based Filtering (CBF) difokuskan pada pengolahan fitur. Langkah fundamental dalam proses ini adalah transformasi fitur tekstual, seperti genre lagu menjadi representasi numerik yang dapat dianalisis oleh algoritma untuk menentukan kemiripan.
 
@@ -93,7 +96,7 @@ Untuk memahami struktur matriks yang dihasilkan, dimensinya diperiksa.
 
 Matriks ini diubah menjadi format dense (padat) di mana semua nilai (termasuk nol) disimpan secara eksplisit. Hasilnya kemudian dapat ditampilkan sebagai DataFrame pandas untuk kemudahan pembacaan, dengan nama lagu sebagai indeks dan term unik dari genre sebagai nama kolom.
 
-### 5. **Collaborative Filltering Preparation**
+### 6. **Collaborative Filltering Preparation**
 
 Persiapan data untuk model Collaborative Filtering (CF), khususnya untuk pendekatan berbasis model neural network, melibatkan serangkaian transformasi agar data sesuai dengan format input yang dibutuhkan model dan untuk memastikan proses pelatihan yang efektif. Langkah-langkah utama yang dilakukan adalah sebagai berikut:
 
